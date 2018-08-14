@@ -16,9 +16,9 @@ if (process.env.JAWSDB_URL) {
 }
 
 // make connection
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
+connection.connect((error)=> {
+  if (error) {
+    console.error("error connecting: " + error.stack);
     return;
   }
   console.log("connected as id " + connection.threadId);
