@@ -10,7 +10,7 @@ $ cd burger
 npm install
 ```
 ## Technologies/Tools
-Express.js
-MySQL
-Handlebars
-Node.js
+- Express.js
+- MySQL
+- Handlebars
+- Node.js
