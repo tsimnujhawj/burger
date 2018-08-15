@@ -6,11 +6,6 @@ let burger = {
       cb(res);
     });
   },
-  getMenu: (cb)=>{
-    orm.selectAll("menu", (res)=>{
-      cb(res);
-    });
-  },
   insertOne: (val, cb)=>{
     orm.insertOne("burgers", "burger_name", val, (res)=>{
       cb(res);
