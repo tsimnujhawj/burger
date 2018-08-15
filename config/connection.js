@@ -1,4 +1,4 @@
-// Set up MySQL connection
+// Setup MySQL connection
 const mysql = require("mysql");
 
 let connection;
