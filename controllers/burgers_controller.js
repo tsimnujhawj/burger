@@ -17,8 +17,17 @@ router.get("/", (req, res)=>{
 
 router.post("/burger", (req, res)=>{
     burger.insertOne(["burger_name"], [req.body.burger_name], (data)=>{
-    res.redirect("/");
+    console.log(data);
 })
+})
+
+router.put("/burgers/:id", (req, res)=>{
+    let condition = "id = " + req.params.id;
+    burger.updateOne({
+        devoured: true
+    }, condition, (data)=>{
+        res.redirect("/");
+    })
 })
 
 module.exports = router;

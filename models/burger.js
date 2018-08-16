@@ -1,26 +1,27 @@
 const orm = require("../config/orm.js");
 
+// Create the burger object
 let burger = {
-  selectAll: (cb)=>{
-    orm.selectAll("burgers", (res)=>{
-      cb(res);
-    });
-  },
-  insertOne: (val, cb)=>{
-    orm.insertOne("burgers", "burger_name", val, (res)=>{
-      cb(res);
-    });
-  },
-  updateOne: (colVal, conditionVal, cb)=>{
-    orm.updateOne("burgers", "devoured", colVal, "id", conditionVal,(res)=>{
-      cb(res);
-    });
-  },
-  deleteOne: (conditionVal, cb)=>{
-    orm.deleteOne("burgers", "id", conditionVal, (res)=>{
-      cb(res);
-    });
-  }
-};
+    // Select all burger table entries
+    selectAll: (cb)=> {
+      orm.selectAll('burgers', function(res) {
+        cb(res);
+      });
+    },
+  
+    // The letiables cols and vals are arrays
+    insertOne: (cols, vals, cb)=> {
+      orm.insertOne('burgers', cols, vals, function(res) {
+        cb(res);
+      });
+    },
+  
+    // The objColVals is an object specifying columns as object keys with associated values
+    updateOne: (objColVals, condition, cb)=> {
+      orm.updateOne('burgers', objColVals, condition, function(res) {
+        cb(res);
+      });
+    }
+  };
 
 module.exports = burger;
