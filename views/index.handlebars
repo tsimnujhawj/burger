@@ -4,8 +4,10 @@
 {{#each burg}}
 {{#unless this.devoured}}
 <li class="burger-item">
-{{this.id}}.{{this.burger_name}}
-<button type="button" class="btn btn-success">Devour it!</button>
+{{this.id}}. {{this.burger_name}}
+<form action="/burger/{{this.id}}?_method=PUT" method="POST">
+<button type="button" class="btn btn-success" onclick="console.log("test")">Devour it!</button>
+</form>
 </li>
 {{/unless}}
 {{/each}}
@@ -17,7 +19,7 @@
 {{#each burg}}
 {{#if this.devoured}}
 <li>
-{{this.id}}.{{this.burger_name}}
+{{this.id}}. {{this.burger_name}}
 </li>
 {{/if}}
 {{/each}}
