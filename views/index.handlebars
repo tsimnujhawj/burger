@@ -1,7 +1,35 @@
-<h1>
+<div class="row">
+    <div class="col-md-6">
+<ul>
 {{#each burg}}
 {{#unless this.devoured}}
+<li class="burger-item">
 {{this.id}}.{{this.burger_name}}
+<button type="button" class="btn btn-success">Devour it!</button>
+</li>
 {{/unless}}
 {{/each}}
-</h1>
+</ul>
+    </div>
+
+    <div class="col-md-6">
+<ul>
+{{#each burg}}
+{{#if this.devoured}}
+<li>
+{{this.id}}.{{this.burger_name}}
+</li>
+{{/if}}
+{{/each}}
+</ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form action="/burgers_controller" method="POST">
+            <input type="text" id="burger-name" name="burger_name" placeholder="Your burger name...">
+            <button type="submit" class="btn btn-success add-burger">Add Your Burger</button>
+        </form>
+    </div>
+</div>

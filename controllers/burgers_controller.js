@@ -15,4 +15,10 @@ router.get("/", (req, res)=>{
     })
 })
 
+router.post("/burger", (req, res)=>{
+    burger.insertOne(["burger_name"], [req.body.burger_name], (data)=>{
+    res.redirect("/");
+})
+})
+
 module.exports = router;
