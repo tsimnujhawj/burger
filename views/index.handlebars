@@ -4,9 +4,8 @@
 {{#each burg}}
 {{#unless this.devoured}}
 <li class="burger-item">
-{{this.id}}. {{this.burger_name}}
 <form action="/burger/{{this.id}}?_method=PUT" method="POST">
-<button type="button" class="btn btn-success" onclick="console.log("test")">Devour it!</button>
+<button type="submit" class="btn btn-success">{{this.id}}. {{this.burger_name}}</button>
 </form>
 </li>
 {{/unless}}
@@ -27,7 +26,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row input-section">
     <div class="col-md-12">
         <form action="/burger" method="POST">
             <input type="text" id="burger-name" name="burger_name" placeholder="Your burger name...">

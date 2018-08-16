@@ -30,7 +30,7 @@ let orm = {
 		let queryString = "SELECT * FROM " + tableInput + ";";
 
 		// Perform the database query
-		connection.query(queryString, function(err, result) {
+		connection.query(queryString, (err, result)=> {
 			if (err) {
 				throw err;
 			}
@@ -75,7 +75,7 @@ let orm = {
 		queryString += " WHERE ";
 		queryString += condition;
 
-		// console.log(queryString);
+		console.log(queryString);
 
 		// Perform the database query
 		connection.query(queryString, (err, result)=> {

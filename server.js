@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const hbs = require("express-handlebars");
 const routes = require("./controllers/burgers_controller");
+const methodOverride = require("method-override");
 
 const PORT = process.env.PORT || 8080;
 
@@ -15,6 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse application/json
 app.use(bodyParser.json());
+
+app.use(methodOverride('_method'));
 
 app.engine("handlebars", hbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
